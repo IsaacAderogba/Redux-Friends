@@ -1,16 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
-import { postFriend } from "../actions/index";
+import { getFriend } from "../actions/index";
 
 const GetFriend = props => {
+  const { friend } = props;
   let idRef = React.createRef();
-
 
   const onGetFriend = event => {
     event.preventDefault();
     const id = idRef.current.value;
-
-    // props.postFriend(name, age, email);
+    props.getFriend(id);
   };
 
   return (
@@ -20,11 +19,18 @@ const GetFriend = props => {
         id <input type="text" ref={idRef} />
       </div>
       <button>Get Friend</button>
+      <p>{friend ? friend.name : ''}</p>
     </form>
   );
 };
 
+function mapStateToProps(state) {
+  return {
+    friend: state.friends.friend
+  };
+}
+
 export default connect(
-  null,
-  { postFriend }
+  mapStateToProps,
+  { getFriend }
 )(GetFriend);

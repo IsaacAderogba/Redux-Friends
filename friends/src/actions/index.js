@@ -65,3 +65,14 @@ export const deleteFriend = id => dispatch => {
       console.log(err);
     });
 };
+
+export const getFriend = id => dispatch => {
+  authedAxios()
+    .get(`${endpoint}/friends/${id}`)
+    .then(res => {
+      dispatch({ type: GET_FRIEND, payload: res.data })
+    })
+    .catch(err => {
+      console.log(err);
+    })
+}
