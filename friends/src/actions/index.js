@@ -1,4 +1,5 @@
 import axios from "axios";
+import authedAxios from '../../axios'
 
 export const LOGIN = "LOGIN";
 export const FAILED_LOGIN = "FAILED_LOGIN";
@@ -28,3 +29,8 @@ export const login = (username, password) => dispatch => {
     })
     .finally(() => {});
 };
+
+// Get Friends Action Creator
+export const getFriends = () => dispatch => {
+
+}
