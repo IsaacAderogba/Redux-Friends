@@ -7,7 +7,7 @@ const initialState = {
 
 export const loginReducer = (state = initialState, action) => {
     switch(action.type) {
-        case (types.LOGIN):
+        case types.LOGIN:
             localStorage.setItem('token', action.payload)
             return {...state, isLoggedIn: true, token: action.payload};
         default:
