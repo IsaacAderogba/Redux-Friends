@@ -1,11 +1,12 @@
 import React from "react";
+import AddFriend from "./AddFriend"
 
 const FriendsForms = props => {
-  const { friends } = props;
-  console.log(friends);
   return (
     <div>
-      <h2>FriendsForms</h2>
+      <h1>FriendsForms</h1>
+      <AddFriend />
+      
     </div>
   );
 };

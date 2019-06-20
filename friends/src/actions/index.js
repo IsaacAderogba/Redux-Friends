@@ -1,5 +1,5 @@
 import axios from "axios";
-import authedAxios from '../axios'
+import authedAxios from "../axios";
 
 export const LOGIN = "LOGIN";
 export const FAILED_LOGIN = "FAILED_LOGIN";
@@ -32,11 +32,23 @@ export const login = (username, password) => dispatch => {
 
 // Get Friends Action Creator
 export const getFriends = () => dispatch => {
-    authedAxios().get(`${endpoint}/friends`)
-      .then(res => {
-          dispatch({ type: GET_FRIENDS, payload: res.data })
-      })
-      .catch(err => {
-          console.log(err)
-      })
-}
+  authedAxios()
+    .get(`${endpoint}/friends`)
+    .then(res => {
+      dispatch({ type: GET_FRIENDS, payload: res.data });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+export const postFriend = () => dispatch => {
+  authedAxios()
+    .post(`${endpoint}/friends`)
+    .then(res => {
+      console.log(res);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
