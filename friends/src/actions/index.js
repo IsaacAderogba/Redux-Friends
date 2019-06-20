@@ -1,4 +1,5 @@
 export const LOGIN = "LOGIN";
+export const IS_FETCHING = "IS_FETCHING";
 export const GET_FRIENDS = "GET_FRIENDS";
 export const GET_FRIEND = "GET_FRIEND";
 export const POST_FRIEND = "POST_FRIEND";
