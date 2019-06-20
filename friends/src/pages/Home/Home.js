@@ -17,8 +17,6 @@ const Home = props => {
     getFriends();
   }, [getFriends]);
 
-  console.log(props);
-
   return (
     <div>
       <FriendsList friends={friends} />

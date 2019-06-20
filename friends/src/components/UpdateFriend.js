@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { postFriend } from "../actions/index";
+import { updateFriend } from "../actions/index";
 
 const UpdateFriend = props => {
   let nameRef = React.createRef();
@@ -12,27 +12,48 @@ const UpdateFriend = props => {
     const name = nameRef.current.value;
     const age = ageRef.current.value;
     const email = emailRef.current.value;
-    props.postFriend(name, age, email);
+    props.updateFriend(props.friend.id, name, age, email);
   };
 
   return (
     <form onSubmit={onAddFriend}>
       <h3>Update Friend</h3>
       <div>
-        name <input type="text" ref={nameRef} />
+        name{" "}
+        <input
+          placeholder={props.friend ? props.friend.name : "name"}
+          type="text"
+          ref={nameRef}
+        />
       </div>
       <div>
-        age <input type="text" ref={ageRef} />
+        age{" "}
+        <input
+          placeholder={props.friend ? props.friend.age : "age"}
+          type="text"
+          ref={ageRef}
+        />
       </div>
       <div>
-        email <input type="text" ref={emailRef} />
+        email{" "}
+        <input
+          placeholder={props.friend ? props.friend.email : "email"}
+          type="text"
+          ref={emailRef}
+        />
       </div>
       <button>Update Friend</button>
     </form>
   );
 };
 
+function mapStateToProps(state) {
+  return {
+    friend: state.friends.selectedFriend
+  };
+}
+
 export default connect(
-  null,
-  { postFriend }
+  mapStateToProps,
+  { updateFriend }
 )(UpdateFriend);

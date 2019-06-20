@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { deleteFriend } from "../actions/index";
+import { deleteFriend, selectFriend } from "../actions/index";
 
 const Friend = props => {
-  const { name, age, email, id, deleteFriend } = props;
+  const { name, age, email, id, deleteFriend, selectFriend } = props;
 
   return (
     <StyledFriends>
@@ -12,6 +12,7 @@ const Friend = props => {
       <span>{name}</span>
       <span>{age}</span>
       <span>{email}</span>
+      <button onClick={() => selectFriend(id)}>Select</button>
       <button onClick={() => deleteFriend(id)}>X</button>
     </StyledFriends>
   );
@@ -24,5 +25,5 @@ const StyledFriends = styled.div`
 
 export default connect(
   null,
-  { deleteFriend }
+  { deleteFriend, selectFriend }
 )(Friend);

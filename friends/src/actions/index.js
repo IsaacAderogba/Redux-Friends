@@ -78,8 +78,25 @@ export const getFriend = id => dispatch => {
     })
 }
 
-export const selectFriend = (id) => {}
+export const selectFriend = (id) => dispatch => {
+  authedAxios()
+    .get(`${endpoint}/friends/${id}`)
+    .then(res => {
+      dispatch({ type: SELECT_FRIEND, payload: res.data })
+    })
+    .catch(err => {
+      console.log(err);
+    })
+}
 
 export const updateFriend = (id, name, age, email) => dispatch => {
-
+  const updatedFriend = {name, age, email}
+  authedAxios()
+    .put(`${endpoint}/friends/${id}`, updatedFriend)
+    .then(res => {
+      dispatch({ type: PUT_FRIEND, payload: res.data})
+    })
+    .catch(err => {
+      console.log(err)
+    })
 }
