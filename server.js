@@ -122,6 +122,7 @@ app.put('/api/friends/:id', authenticator, (req, res) => {
   }
 });
 
+//tested
 app.delete('/api/friends/:id', authenticator, (req, res) => {
   const { id } = req.params;
 
