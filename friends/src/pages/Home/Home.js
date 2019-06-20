@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import * as actions from "../../actions/index";
 import FriendsList from "../../components/FriendsList";
+import FriendsForm from "../../components/FriendsForm";
 
 // export const GET_FRIENDS = "GET_FRIENDS";
 // export const GET_FRIEND = "GET_FRIEND";
@@ -21,6 +22,7 @@ const Home = props => {
   return (
     <div>
       <FriendsList friends={friends} />
+      <FriendsForm />
     </div>
   );
 };
