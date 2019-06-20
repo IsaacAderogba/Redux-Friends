@@ -102,6 +102,7 @@ app.post('/api/friends', authenticator, (req, res) => {
   res.send(friends);
 });
 
+// tested
 app.put('/api/friends/:id', authenticator, (req, res) => {
   const { id } = req.params;
 
