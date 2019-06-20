@@ -3,7 +3,6 @@ import * as types from "../actions";
 const initialState = {
   friends: [],
   friend: null,
-  selectedFriend: null
 };
 
 export const friendsReducer = (state = initialState, action) => {
@@ -12,8 +11,6 @@ export const friendsReducer = (state = initialState, action) => {
       return { ...state, friends: action.payload };
     case types.GET_FRIEND:
       return { ...state, friend: action.payload };
-    case types.SELECT_FRIEND:
-      return { ...state, selectedFriend: action.payload };
     case types.POST_FRIEND:
       return { ...state, friends: action.payload };
     case types.PUT_FRIEND:
