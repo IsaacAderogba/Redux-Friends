@@ -1,14 +1,15 @@
 import React from "react";
+import { connect } from 'react-redux';
+import { login } from '../actions/index'
 
-const Home = () => {
+const Login = (props) => {
   let userRef = React.createRef();
   let passRef = React.createRef();
 
   const onLogin = () => {
     const username = userRef.current.value;
     const password = passRef.current.value;
-    console.log(username, password)
-    // call login action
+    props.login(username, password);
   };
 
   return (
@@ -25,4 +26,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default connect(null, { login })(Login);
