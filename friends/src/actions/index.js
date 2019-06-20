@@ -10,6 +10,7 @@ export const GET_FRIEND = "GET_FRIEND";
 export const POST_FRIEND = "POST_FRIEND";
 export const PUT_FRIEND = "PUT_FRIEND";
 export const DELETE_FRIEND = "DELETE_FRIEND";
+export const SELECT_FRIEND = "SELECT_FRIEND";
 
 const endpoint = "http://localhost:5000/api";
 
@@ -75,4 +76,8 @@ export const getFriend = id => dispatch => {
     .catch(err => {
       console.log(err);
     })
+}
+
+export const updateFriend = (id, name, age, email) => dispatch => {
+
 }

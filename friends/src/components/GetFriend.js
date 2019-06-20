@@ -19,7 +19,7 @@ const GetFriend = props => {
         id <input type="text" ref={idRef} />
       </div>
       <button>Get Friend</button>
-      <p>{friend ? friend.name : ''}</p>
+      <p>{friend ? `Hi, ${friend.name}` : ''}</p>
     </form>
   );
 };
