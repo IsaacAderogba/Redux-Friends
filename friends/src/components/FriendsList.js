@@ -11,6 +11,7 @@ const FriendsList = props => {
         return (
           <Friend
             key={friend.id}
+            id={friend.id}
             name={friend.name}
             age={friend.age}
             email={friend.email}

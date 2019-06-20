@@ -44,11 +44,22 @@ export const getFriends = () => dispatch => {
 };
 
 export const postFriend = (name, age, email) => dispatch => {
-  const newFriend = { name, age, email}
+  const newFriend = { name, age, email };
   authedAxios()
     .post(`${endpoint}/friends`, newFriend)
     .then(res => {
       dispatch({ type: POST_FRIEND, payload: res.data });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+export const deleteFriend = id => dispatch => {
+  authedAxios()
+    .delete(`${endpoint}/friends/${id}`)
+    .then(res => {
+      dispatch({ type: DELETE_FRIEND, payload: res.data });
     })
     .catch(err => {
       console.log(err);
