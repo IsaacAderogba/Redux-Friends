@@ -60,6 +60,7 @@ function authenticator(req, res, next) {
   }
 }
 
+// tested
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
   if (username === 'Lambda School' && password === 'i<3Lambd4') {
@@ -74,12 +75,14 @@ app.post('/api/login', (req, res) => {
   }
 });
 
+// tested
 app.get('/api/friends', authenticator, (req, res) => {
   setTimeout(() => {
     res.send(friends);
   }, 1000);
 });
 
+// tested
 app.get('/api/friends/:id', authenticator, (req, res) => {
   const friend = friends.find(f => f.id == req.params.id);
 
