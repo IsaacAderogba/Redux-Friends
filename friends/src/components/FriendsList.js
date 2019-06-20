@@ -1,12 +1,22 @@
 import React from "react";
 import Friend from "./Friend";
 
-const FriendsList = (props) => {
-    const { friends } = props;
-    console.log(friends);
+const FriendsList = props => {
+  const { friends } = props;
+  console.log(friends);
   return (
     <div>
       <h1>FriendsList</h1>
+      {friends.friends.map(friend => {
+        return (
+          <Friend
+            key={friend.id}
+            name={friend.name}
+            age={friend.age}
+            email={friend.email}
+          />
+        );
+      })}
     </div>
   );
 };
