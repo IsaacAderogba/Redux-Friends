@@ -5,13 +5,7 @@ const initialState = {
   friend: null
 };
 
-// export const GET_FRIENDS = "GET_FRIENDS";
-// export const GET_FRIEND = "GET_FRIEND";
-// export const POST_FRIEND = "POST_FRIEND";
-// export const PUT_FRIEND = "PUT_FRIEND";
-// export const DELETE_FRIEND = "DELETE_FRIEND";
-
-export const loginReducer = (state = initialState, action) => {
+export const friendsReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.GET_FRIENDS:
       return { ...state, friends: action.payload };
