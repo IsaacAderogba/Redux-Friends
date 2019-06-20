@@ -7,12 +7,12 @@ const Login = props => {
   let ageRef = React.createRef();
   let emailRef = React.createRef();
 
-  const onAddFriend = () => {
+  const onAddFriend = event => {
+    event.preventDefault();
     const name = nameRef.current.value;
     const age = ageRef.current.value;
     const email = emailRef.current.value;
-
-    props.postFriend();
+    props.postFriend(name, age, email);
   };
 
   return (
@@ -25,7 +25,7 @@ const Login = props => {
         age <input type="text" ref={ageRef} />
       </div>
       <div>
-        email <input type="text" ref={ageRef} />
+        email <input type="text" ref={emailRef} />
       </div>
       <button>Add Friend</button>
     </form>

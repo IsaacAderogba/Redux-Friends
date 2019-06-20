@@ -35,6 +35,7 @@ export const getFriends = () => dispatch => {
   authedAxios()
     .get(`${endpoint}/friends`)
     .then(res => {
+      console.log(res);
       dispatch({ type: GET_FRIENDS, payload: res.data });
     })
     .catch(err => {
@@ -42,11 +43,12 @@ export const getFriends = () => dispatch => {
     });
 };
 
-export const postFriend = () => dispatch => {
+export const postFriend = (name, age, email) => dispatch => {
+  const newFriend = { name, age, email}
   authedAxios()
-    .post(`${endpoint}/friends`)
+    .post(`${endpoint}/friends`, newFriend)
     .then(res => {
-      console.log(res);
+      dispatch({ type: POST_FRIEND, payload: res.data });
     })
     .catch(err => {
       console.log(err);
