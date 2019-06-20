@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { login } from '../actions/index'
+import { withRouter } from "react-router-dom";
 
 const Login = (props) => {
   let userRef = React.createRef();
@@ -12,8 +13,11 @@ const Login = (props) => {
     props.login(username, password);
   };
 
+  if(localStorage.getItem('token')) {
+    props.history.push("/");
+  }
   return (
-    <div>
+    <form onSubmit={onLogin}>
       <h3>Login</h3>
       <div>
         username <input type="text" ref={userRef} />
@@ -21,9 +25,9 @@ const Login = (props) => {
       <div>
         password <input type="text" ref={passRef} />
       </div>
-      <button onClick={onLogin}>Log in</button>
-    </div>
+      <button>Log in</button>
+    </form>
   );
 };
 
-export default connect(null, { login })(Login);
+export default connect(null, { login })(withRouter(Login));
