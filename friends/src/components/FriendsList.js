@@ -4,11 +4,11 @@ import Friend from "./Friend";
 const FriendsList = props => {
   const { friends } = props;
   return (
-    <div>
+    <div className={"ui card fluid"}>
       <h1>FriendsList</h1>
       {friends.friends.map(friend => {
         return (
-          <Friend
+          <Friend 
             key={friend.id}
             id={friend.id}
             name={friend.name}

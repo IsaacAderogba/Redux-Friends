@@ -13,12 +13,13 @@ const GetFriend = props => {
   };
 
   return (
-    <form onSubmit={onGetFriend}>
+    <form className="ui form text container" onSubmit={onGetFriend}>
       <h3>Get Friend</h3>
       <div>
         id <input type="text" ref={idRef} />
       </div>
-      <button>Get Friend</button>
+      <br />
+      <button className="ui button">Get Friend</button>
       <p>{friend ? `Hi, ${friend.name}` : ''}</p>
     </form>
   );

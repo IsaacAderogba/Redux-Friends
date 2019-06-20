@@ -18,7 +18,7 @@ const Home = props => {
   }, [getFriends]);
 
   return (
-    <div>
+    <div className="ui container">
       <FriendsList friends={friends} />
       <FriendsForm />
     </div>

@@ -16,7 +16,7 @@ const UpdateFriend = props => {
   };
 
   return (
-    <form onSubmit={onAddFriend}>
+    <form className="ui form text container" onSubmit={onAddFriend}>
       <h3>Update Friend</h3>
       <div>
         name{" "}
@@ -42,7 +42,8 @@ const UpdateFriend = props => {
           ref={emailRef}
         />
       </div>
-      <button>Update Friend</button>
+      <br />
+      <button className="ui button">Update Friend</button>
     </form>
   );
 };

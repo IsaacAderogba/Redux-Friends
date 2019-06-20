@@ -17,7 +17,7 @@ const Login = (props) => {
     props.history.push("/");
   }
   return (
-    <form onSubmit={onLogin}>
+    <form onSubmit={onLogin} >
       <h3>Login</h3>
       <div>
         username <input type="text" ref={userRef} />

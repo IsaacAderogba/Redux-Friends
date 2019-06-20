@@ -5,7 +5,7 @@ import UpdateFriend from "./UpdateFriend";
 
 const FriendsForms = props => {
   return (
-    <div>
+    <div className={"ui card fluid"}>
       <h1>FriendsForms</h1>
       <AddFriend />
       <GetFriend />
