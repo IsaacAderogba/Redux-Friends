@@ -8,6 +8,7 @@ const Friend = props => {
 
   return (
     <StyledFriends>
+      <span>{id}</span>
       <span>{name}</span>
       <span>{age}</span>
       <span>{email}</span>

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { postFriend } from "../actions/index";
 
-const Login = props => {
+const AddFriend = props => {
   let nameRef = React.createRef();
   let ageRef = React.createRef();
   let emailRef = React.createRef();
@@ -35,4 +35,4 @@ const Login = props => {
 export default connect(
   null,
   { postFriend }
-)(Login);
+)(AddFriend);
