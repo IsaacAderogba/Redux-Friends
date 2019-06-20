@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const LOGIN = "LOGIN";
+export const FAILED_LOGIN = "FAILED_LOGIN";
 export const IS_FETCHING = "IS_FETCHING";
 export const FAILED_FETCH = "FAILED_FETCH";
 export const GET_FRIENDS = "GET_FRIENDS";
@@ -17,11 +18,13 @@ export const login = (username, password) => dispatch => {
   axios
     .post(`${endpoint}/login`, credentials)
     .then(res => {
-      console.log(res);
-      //   dispatch({ type: LOGIN, payload: })
+      dispatch({ type: LOGIN, payload: res.data.payload });
     })
     .catch(err => {
-      console.log(JSON.parse(err.request.response).error);
+      dispatch({
+        type: FAILED_LOGIN,
+        payload: JSON.parse(err.request.response).error
+      });
     })
     .finally(() => {});
 };
