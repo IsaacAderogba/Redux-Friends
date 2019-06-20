@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 import * as actions from "../../actions/index";
+import FriendsList from "../../components/FriendsList";
 
 // export const GET_FRIENDS = "GET_FRIENDS";
 // export const GET_FRIEND = "GET_FRIEND";
@@ -10,13 +11,18 @@ import * as actions from "../../actions/index";
 // export const DELETE_FRIEND = "DELETE_FRIEND";
 
 const Home = props => {
+  const { getFriends } = props;
   useEffect(() => {
-    props.getFriends();
-  }, [props]);
+    getFriends();
+  }, [getFriends]);
 
   console.log(props);
 
-  return <div>Home</div>;
+  return (
+    <div>
+      <FriendsList />
+    </div>
+  );
 };
 
 function mapStateToProps(state) {

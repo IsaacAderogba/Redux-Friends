@@ -34,7 +34,7 @@ export const login = (username, password) => dispatch => {
 export const getFriends = () => dispatch => {
     authedAxios().get(`${endpoint}/friends`)
       .then(res => {
-          console.log(res)
+          dispatch({ type: GET_FRIENDS, payload: res.data })
       })
       .catch(err => {
           console.log(err)
