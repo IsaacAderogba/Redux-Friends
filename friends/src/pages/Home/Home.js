@@ -11,7 +11,7 @@ import FriendsList from "../../components/FriendsList";
 // export const DELETE_FRIEND = "DELETE_FRIEND";
 
 const Home = props => {
-  const { getFriends } = props;
+  const { getFriends, friends } = props;
   useEffect(() => {
     getFriends();
   }, [getFriends]);
@@ -20,7 +20,7 @@ const Home = props => {
 
   return (
     <div>
-      <FriendsList />
+      <FriendsList friends={friends} />
     </div>
   );
 };
