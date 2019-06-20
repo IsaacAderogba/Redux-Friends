@@ -8,3 +8,5 @@ const rootReducer = combineReducers({
   login: loginReducer,
   friends: friendsReducer
 });
+
+export default rootReducer;
