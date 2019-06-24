@@ -60,6 +60,7 @@ function authenticator(req, res, next) {
   }
 }
 
+// tested
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
   if (username === 'Lambda School' && password === 'i<3Lambd4') {
@@ -74,12 +75,14 @@ app.post('/api/login', (req, res) => {
   }
 });
 
+// tested
 app.get('/api/friends', authenticator, (req, res) => {
   setTimeout(() => {
     res.send(friends);
   }, 1000);
 });
 
+// tested
 app.get('/api/friends/:id', authenticator, (req, res) => {
   const friend = friends.find(f => f.id == req.params.id);
 
@@ -90,6 +93,7 @@ app.get('/api/friends/:id', authenticator, (req, res) => {
   }
 });
 
+// tested
 app.post('/api/friends', authenticator, (req, res) => {
   const friend = { id: getNextId(), ...req.body };
 
@@ -98,6 +102,7 @@ app.post('/api/friends', authenticator, (req, res) => {
   res.send(friends);
 });
 
+// tested
 app.put('/api/friends/:id', authenticator, (req, res) => {
   const { id } = req.params;
 
@@ -117,6 +122,7 @@ app.put('/api/friends/:id', authenticator, (req, res) => {
   }
 });
 
+//tested
 app.delete('/api/friends/:id', authenticator, (req, res) => {
   const { id } = req.params;
 
